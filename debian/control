@@ -1,15 +1,36 @@
-Source: template-repository
-Section: unknown
+Source: libdebian-copyright-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Xavier Guimard <yadd@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends: debhelper-compat (= 13),
+               libmodule-build-perl
+Build-Depends-Indep: libarray-unique-perl,
+                     libclass-accessor-perl,
+                     libparse-debcontrol-perl,
+                     libperl6-slurp-perl,
+                     libtest-deep-perl,
+                     libtest-exception-perl,
+                     libtest-longstring-perl,
+                     libtest-nowarnings-perl,
+                     libtie-ixhash-perl,
+                     perl
+Standards-Version: 3.9.7
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libdebian-copyright-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libdebian-copyright-perl.git
+Homepage: https://metacpan.org/release/Debian-Copyright
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: libdebian-copyright-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         libarray-unique-perl,
+         libclass-accessor-perl,
+         libparse-debcontrol-perl,
+         libtie-ixhash-perl
+Description: perl module to parse, merge and write Debian copyright files
+ Debian::Copyright can be used for the representation, manipulation and
+ merging of Debian copyright files in an object-oriented way. It provides easy
+ reading and writing of the debian/copyright file found in Debian source
+ packages.
